@@ -9,7 +9,7 @@
     html{
        scroll-behavior: smooth;
     }
-    body {
+    .bgimg {
         background-image: url("bg.jpg");
         background-size: cover;
         background-repeat: no-repeat;
@@ -20,29 +20,32 @@
          background-color: #0B6623;
     }
     .logo {
-         color: #OB6623;
+      width: 250px;
+      height: 150px;
+      text-align: center;    
     }
     .msg {
         color: #0B6623;
 </style>
 </head>
   <body>
-  <header>
-    <div class="logo">Adhoc Technologies</div>
-  </header>
-  <nav>
-    <button class="menu" href="websites.html">Webdesign</button>
-    <button class="menu" href="tech.html">Tech Support</button>
-    <button class="menu" href="games.html">Games</button>
-    <button class="menu" href="contact.html">Contact Us</button>
-
-  </nav>
-  <section>
-    <header> 
-      <p class="msg">Just your friendly neighborhood tech friend to answer any questions and help you with your tech needs</p>
+    <header>
+        <img src="adhoc.png" class=logo alt="Adhoc logo within HTML closing tags" class="logo">Adhoc Technologies</img>
     </header>
-  </section>
+        <img src="bg.jpg" class-bgimg>
+    <nav>
+        <button class="menu" href="websites.html">Webdesign</button>
+        <button class="menu" href="tech.html">Tech Support</button>
+        <button class="menu" href="games.html">Games</button>
+        <button class="menu" href="contact.html">Contact Us</button>
+    
+    </nav>
+    <section>
+        <header> 
+            <h1 class="msg">Just your friendly neighborhood tech friend to answer any questions and help you with your tech needs</h1>
+        </header>
+    </section>
     
       <!-- -->
-</body>
+    </body>
 </html>
