@@ -3,92 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhoc</title>
-<style>
+    <title>Adhoc Tech</title>
+    <link rel="icon" type="image/x-icon" href="acfav.png">
+    <script src="https://kit.fontawesome.com/ebcf39c321.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            background-color: #366234;
+            color: #a7a7a7;
+        }
     
-    html{
-       scroll-behavior: smooth;
-    }
-    /*
-    .bgimg {
-        background-image: url("bg.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center;
-    } 
-*/
-    .menu {
-         background-color: #72bf6a;
-    }
-    .logo {
-      width: 250px;
-      height: 150px;
-      text-align: center;    
-    }
-    .msg {
-        color: #0B6623;
-    /* Navbar container */
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      font-family: Arial;
-    }
-    
-    /* Links inside the navbar */
-    .navbar a {
-      float: left;
-      font-size: 16px;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-    
+        header, footer {
+            background-color: black;
+            color: white;
+            padding: .5rem;
+            text-align: center;
+            width: 100%;
+        }
 
 
-</style>
+        header img {
+            max-height: 5rem;
+        }
+
+        .middle {
+            display: grid;
+            gap: .5rem;
+            grid-auto-columns: 1fr;
+            padding-block: 2rem;
+            width: 100%;
+            margin-inline: auto;
+            /* grid-template-areas:  */
+            /* 'header header header header header'
+            'left middler middler middler b1r'
+            'left middler middler middler b1r'
+            'left middler middler middler b2r'
+            'left middler middler middler b2r'; */
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .left {
+            grid-area: L;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .3em;
+
+        }
+        .middler {
+            grid-area: middler;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .7em;
+
+        }
+        .box1-right {
+            grid-area: b1r;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .5em;
+
+        }
+        .box2-right {
+            grid-area: b2r;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .5em;
+            
+        }
+
+
+        @media screen and (min-width: 0em) {
+            .middle {
+                grid-template-areas:
+                "L middler"
+                "L middler"
+                "L middler"
+                "L middler"
+                "b1r b1r"
+                "b2r b2r";
+            }
+        }
+
+        @media screen and (min-width: 38em) {
+            .middle {
+                grid-template-areas:
+                "L L middler middler"
+                "L L middler middler"
+                "L L middler middler"
+                "b1r b1r b2r b2r"
+                "b1r b1r b2r b2r";
+            }
+        }
+
+        @media screen and (min-width: 54em) {
+            .middle {
+                grid-template-areas:
+                "L middler middler middler b1r"
+                "L middler middler middler b1r"
+                "L middler middler middler b2r"
+                "L middler middler middler b2r"
+
+            }
+        }
+
+        @media screen and (min-width: 75em) {
+            .middle {
+                grid-template-areas:
+                "L middler middler middler b1r"
+                "L middler middler middler b1r"
+                "L middler middler middler b2r"
+                "L middler middler middler b2r"
+
+        }
+            }
+
+
+        .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        /* height: 100%; Take up maximum height */
+        overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+
+
+        .button {
+            font-size: 18px;
+            border-radius: 12px;
+            background-color: #0b0b0b;
+            color: #8756d1;
+            border: none;
+            cursor: pointer;
+            padding: .5rem 1rem;
+        }
+
+    </style>
 </head>
-  <body>
-    <header>
-        <img src="adhoc.png" class=logo class="logo">Adhoc Technologies</img>
-    </header>
-<!--         <img src="bg.jpg" class-bgimg>  --> 
-    <div class="navbar">
-        <a href="about.html">About Me</a>
-        <div class="dropdown">
-          <button class="dropbtn">Games
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="https://adhocchaos.me/">Guess Who</a>
-            <a href="tbd.html">TBD</a>
-            <a href="idk.html">IDK</a>
-          </div>
-        <div class="dropdown">
-          <button class="dropbtn">Products
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="websites.html">Websites</a>
-            <a href="tech.html"> Tech Support</a>
-            <a href="idk.html">TBD</a>
-          </div>
-        </div>
-    </div> 
-<!--     <nav>
-        <button class="menu" href="websites.html">Webdesign</button>
-        <button class="menu" href="tech.html">Tech Support</button>
-        <button class="menu" href="games.html">Games</button>
-        <button class="menu" href="contact.html">Contact Us</button>
-    
-    </nav> -->
-    <section>
-        <header> 
-            <h1 class="msg">Just your friendly neighborhood tech friend to answer any questions and help you with your tech needs</h1>
+
+<!-- -------------------------------------------------------- -->
+
+
+<body>
+        <header>
+            <div class="header-image-container">
+                <img src="AC.png" alt="The coolest looking logo that says Adhoc Chaos with sick vaporwave aesthetics and its got purple and black and a sunset in the middle, yeah its pretty cool">
+            </div>
         </header>
-    </section>
-    
-      <!-- -->
-    </body>
+
+        <main class="middle">
+
+            <div class="left">
+                <div class="button-container">
+                    <button color: #74C0FC class="button" onclick="window.location.href = ;">GUESS WHO</button>
+                    <button class="button" onclick="window.location.href = 'Stories.html';">Theives Stories</button>
+                    <button class="button" onclick="window.location.href = 'Marvel.html';">Marvel</button>
+                    <button class="button" onclick="window.location.href = 'ATLA.html';">Avatar: the Last Airbender</button>
+                    <button class="button" onclick="window.location.href = 'Stardew.html';">Stardew Valley</button>
+                    <button class="button" onclick="window.location.href = 'Starwars.html';">Star Wars</button>
+                    <button class="button" onclick="window.location.href = 'LOTR.html';">Lord of the Rings</button>
+                    <button class="button" onclick="window.location.href = '';">OTHER GAMES</button>
+                    <button class="button" onclick="window.location.href = 'drink.html';">Drinking Games</button>
+                    <button class="button" onclick="window.location.href = 'ATLA.html';">Placeholder</button>
+                    <button class="button" onclick="window.location.href = 'Stardew.html';">Placeholder</button>
+                    <button class="button" onclick="window.location.href = 'Starwars.html';">Placeholder</button>
+                    <button class="button" onclick="window.location.href = 'LOTR.html';">Placeholder</button>
+                    <button class="button" onclick="window.location.href = 'Stories.html';">Placeholder</button>
+                    <button class="button" onclick="window.location.href = 'Marvel.html';">Placeholder</button>
+                </div>
+            </div>
+            <section class="middler">
+                <h1 font-weight: bold color: #74C0FC>Welcome to Fandom Guess Who!</h1>
+                <p>
+                    Do you have any ideas on a franchise you would like to see a Guess Who page for? Contact me through Discord or Email with 16-30 characters with their respective names and a picture of their face.
+                </p>
+                <p>
+                    
+                </p>
+                <p>
+                    
+                </p>
+
+            </section>
+        
+            <div class="box1-right">
+                <h2 color: #74C0FC class="name">Contact:</h2>
+                <a href="discordapp.com/users/468257089551335453" target="_blank"><i class="fa-brands fa-discord" style="color: #74C0FC;"></i> Discord: .adhocchaos</a>
+                <br>
+                <a href="mailto:adhocchaos7@gmail.com" target="_blank"><i class="fa-regular fa-envelope" style="color: #74C0FC;"></i> Email: AdhocChaos7@gmail.com</a>
+                <br>
+                <a href="https://www.twitch.tv/adhoc__chaos" target="_blank"><i class="fa-brands fa-twitch" style="color: #74C0FC;"></i> Twitch: adhoc__chaos</a>
+                <br>
+                <a href="https://www.pinterest.com/AdhocChaos/" target="_blank"><i class="fa-brands fa-pinterest" style="color: #74C0FC;"></i> Pinterest: AdhocChaos</a>
+            </div>
+
+            <div class="box2-right">
+                <h2 color: #74C0FC class="name">Some other info maybe?</h2>
+                <p class="position">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores expedita dolor dolorum aperiam vitae accusantium! Autem et obcaecati ducimus quasi culpa necessitatibus rem, libero iusto quibusdam pariatur tempora odio repellendus.</p>
+            </div>
+        </main>
+
+<footer>
+    Thank you for your patience as this is a work in progress :)
+</footer>
+</body>
 </html>
