@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhoc</title>
+    <link rel="icon" type="image/x-icon" href="atfav.png">
+    <script src="https://kit.fontawesome.com/ebcf39c321.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            background-color: #5d704b;
+            color: #b7b7b7;
+            text-size: 18;
+            align-content: space-between;
+            justify-items: center;
+
+        }
+    
+        header, footer {
+            background-color: black;
+            color: white;
+            padding: .5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+
+        header img {
+            max-height: 5rem;
+        }
+
+        .middle {
+            display: grid;
+            gap: .5rem;
+            grid-auto-columns: 1fr;
+            padding-block: 2rem;
+            width: 100%;
+            margin-inline: auto;
+            min-height: 100vh;
+            /* grid-template-areas:  */
+            /* 'header header header header header'
+            'left middler middler middler b1r'
+            'left middler middler middler b1r'
+            'left middler middler middler b2r'
+            'left middler middler middler b2r'; */
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            /*left: 0;
+            right: 0; */
+        }
+        
+        .left {
+            grid-area: L;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .3em;
+
+        }
+        .middler {
+            grid-area: middler;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .7em;
+
+        }
+        .box1-right {
+            grid-area: b1r;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .5em;
+
+        }
+        .box2-right {
+            grid-area: b2r;
+            background-color: #1414149e;
+            border-radius: 6px;
+            padding: .5em;
+            
+        }
+
+
+        @media screen and (min-width: 0em) {
+            .middle {
+                grid-template-areas:
+                "L middler"
+                "L middler"
+                "L middler"
+                "L middler"
+                "b1r b1r"
+                "b2r b2r";
+            }
+        }
+
+        @media screen and (min-width: 38em) {
+            .middle {
+                grid-template-areas:
+                "L L middler middler"
+                "L L middler middler"
+                "L L middler middler"
+                "b1r b1r b2r b2r"
+                "b1r b1r b2r b2r";
+            }
+        }
+
+        @media screen and (min-width: 54em) {
+            .middle {
+                grid-template-areas:
+                "L middler middler middler b1r"
+                "L middler middler middler b1r"
+                "L middler middler middler b2r"
+                "L middler middler middler b2r"
+
+            }
+        }
+
+        @media screen and (min-width: 75em) {
+            .middle {
+                grid-template-areas:
+                "L middler middler middler b1r"
+                "L middler middler middler b1r"
+                "L middler middler middler b2r"
+                "L middler middler middler b2r"
+
+        }
+            }
+
+
+        .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        height: 100%; /*Take up maximum height */
+        overflow-y: auto; /* Enable vertical scrolling */
+        justify-content: space-between;
+
+        }
+
+
+
+        .button {
+            font-size: 18px;
+            border-radius: 12px;
+            background-color: #0b0b0b;
+            color: #bdd1b7;
+            border: none;
+            cursor: pointer;
+            padding: .5rem 1rem;
+        }
+
+        a:link {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        a:visited {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+        
+        a:active {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<!-- -------------------------------------------------------- -->
+
+
+<body>
+        <header>
+            <div class="header-image-container">
+                <img src="Adhoc.png" alt="Light sage green text in HTML closing brackets that says Adhoc. It means 'for this purpose' in Latin">
+            </div>
+        </header>
+
+        <main class="middle">
+
+        </main>
+
+<footer>
+  A special thank you to Mr. Adhoc for the creation of this game and allowing me to share it here with you :) ♥
+</footer>
+</body>
+</html>
