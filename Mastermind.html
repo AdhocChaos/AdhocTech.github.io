@@ -198,6 +198,117 @@
         </header>
 
         <main class="middle">
+            <h1>Welcome to the Number Guessing Game</h1>
+
+<div id="clues"></div>
+
+<div id="guessing">
+    <label for="userGuess">Enter your 3-digit guess:</label>
+    <input type="text" id="userGuess" maxlength="3" />
+    <button onclick="checkGuess()">Submit Guess</button>
+</div>
+
+<div id="result"></div>
+
+<button id="playAgainBtn" onclick="startGame()" style="display:none;">Play Again</button>
+
+<script>
+    let code;
+    let clues = [];
+    let attempts = 0;
+
+    // Function to generate a random 3-digit number
+    function generateCode() {
+        return Array.from({ length: 3 }, () => Math.floor(Math.random() * 10)).join('');
+    }
+
+    // Function to calculate matches between code and guess
+    function getMatch(code, guess) {
+        let correctPosition = 0;
+        let correctNumber = 0;
+        let remainingCode = [];
+        let remainingGuess = [];
+
+        // Check for correct positions
+        for (let i = 0; i < 3; i++) {
+            if (code[i] === guess[i]) {
+                correctPosition++;
+            } else {
+                remainingCode.push(code[i]);
+                remainingGuess.push(guess[i]);
+            }
+        }
+
+        // Check for correct numbers in the wrong positions
+        for (let digit of remainingGuess) {
+            const index = remainingCode.indexOf(digit);
+            if (index !== -1) {
+                correctNumber++;
+                remainingCode.splice(index, 1); // Remove the matched digit
+            }
+        }
+
+        return { correctPosition, correctNumber };
+    }
+
+    // Function to generate clues
+    function generateClues() {
+        clues = [];
+        while (clues.length < 5) {
+            const guess = generateCode();
+            if (guess !== code) {
+                const match = getMatch(code, guess);
+                clues.push({
+                    guess: guess,
+                    correctPosition: match.correctPosition,
+                    correctNumber: match.correctNumber
+                });
+            }
+        }
+    }
+
+    // Function to display clues
+    function displayClues() {
+        const clueDiv = document.getElementById('clues');
+        clueDiv.innerHTML = "<h3>Here are your clues:</h3>";
+        clues.forEach(clue => {
+            clueDiv.innerHTML += `<p>${clue.guess} | ${clue.correctPosition} correct in position, ${clue.correctNumber} correct out of position.</p>`;
+        });
+    }
+
+    // Function to check the user's guess
+    function checkGuess() {
+        const userGuess = document.getElementById('userGuess').value;
+        if (userGuess.length !== 3 || !/^\d{3}$/.test(userGuess)) {
+            alert("Invalid input! Please enter a 3-digit number.");
+            return;
+        }
+
+        const match = getMatch(code, userGuess);
+        if (userGuess === code) {
+            document.getElementById('result').innerHTML = `Congratulations! You guessed the correct code: ${code}`;
+            document.getElementById('guessing').style.display = 'none';
+            document.getElementById('playAgainBtn').style.display = 'inline-block';
+        } else {
+            document.getElementById('result').innerHTML = `Incorrect guess. ${match.correctPosition} correct in position, ${match.correctNumber} correct out of position.`;
+        }
+    }
+
+    // Function to start the game
+    function startGame() {
+        code = generateCode();
+        generateClues();
+        displayClues();
+        document.getElementById('userGuess').value = '';
+        document.getElementById('guessing').style.display = 'block';
+        document.getElementById('result').innerHTML = '';
+        document.getElementById('playAgainBtn').style.display = 'none';
+    }
+
+    // Start the game when the page loads
+    window.onload = startGame;
+</script>
+
 
         </main>
 
