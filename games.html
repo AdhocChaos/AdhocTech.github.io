@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhoc Games</title>
+    <style>
+        body {
+            background-color: #5d704b;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            background-color: black;
+            color: #5d704b;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            margin-top: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.5);
+        }
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 5px 0;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+        }
+        .game-box {
+            background-color: #1414149e;
+            padding: 20px;
+            border-radius: 8px;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">&lt;/adhoc games&gt;</div>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Guess Who</h2>
+            <ul>
+                <li>Marvel</li>
+                <li>Star Wars</li>
+                <li>Lord of the Rings</li>
+                <li>Stardew Valley</li>
+                <li>Pokemon</li>
+                <li>Avatar the Last Airbender</li>
+                <li>Thief's Life</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="game-box">Scoundrel<br><small>Placeholder description</small></div>
+            <div class="game-box">Mastermind<br><small>Placeholder description</small></div>
+            <div class="game-box">Drink<br><small>Placeholder description</small></div>
+            <div class="game-box">ABC<br><small>Placeholder description</small></div>
+            <div class="game-box">DEF<br><small>Placeholder description</small></div>
+            <div class="game-box">GHI<br><small>Placeholder description</small></div>
+        </div>
+    </div>
+</body>
+</html>
