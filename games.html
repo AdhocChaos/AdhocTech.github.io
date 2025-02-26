@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhoc Games</title>
+    <title>Game Selection</title>
     <style>
         body {
             background-color: #5d704b;
@@ -24,18 +24,6 @@
             font-size: 24px;
             font-weight: bold;
         }
-        header img {
-            max-height: 5rem;
-        }
-
-        header, footer {
-            background-color: black;
-            color: white;
-            padding: .5rem;
-            text-align: center;
-            width: 100%;
-        }
-
         .container {
             display: flex;
             width: 80%;
@@ -53,9 +41,16 @@
             list-style-type: none;
             padding: 0;
         }
-        .sidebar ul li {
+        .sidebar ul button {
+            display: block;
+            width: 100%;
             margin: 5px 0;
-            height: 90rem;
+            padding: 10px;
+            background-color: green;
+            color: pink;
+            border: none;
+            cursor: pointer;
+            text-align: center;
         }
         .content {
             flex-grow: 1;
@@ -71,15 +66,18 @@
             width: 150px;
             text-align: center;
         }
+        .game-box button {
+            background-color: green;
+            color: pink;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <header>
-            <div class="header-image-container">
-                <img src="adhocgames.png" alt="Light sage green text in HTML closing brackets that says Adhoc Games. It means 'for this purpose there are games' in Latin and English...kinda">
-            </div>   
-    </header>
-    
+    <div class="header">&lt;/adhoc games&gt;</div>
     <div class="container">
         <div class="sidebar">
             <h2>Guess Who</h2>
