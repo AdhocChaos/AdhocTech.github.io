@@ -12,8 +12,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 18px;
         }
         .header {
             background-color: black;
@@ -23,20 +22,29 @@
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
         .container {
             display: flex;
-            width: 80%;
-            margin-top: 20px;
+            width: 100%;
+            margin-top: 60px;
         }
         .sidebar {
             width: 200px;
             padding: 20px;
             background-color: rgba(20, 20, 20, 0.5);
-            align: left;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 80px;
         }
         .sidebar h2 {
             margin-bottom: 10px;
+            color: white;
         }
         .sidebar ul {
             list-style-type: none;
@@ -59,6 +67,7 @@
             flex-wrap: wrap;
             gap: 15px;
             padding: 20px;
+            margin-left: 220px;
         }
         .game-box {
             background-color: #1414149e;
@@ -68,8 +77,8 @@
             text-align: center;
         }
         .game-box button {
-            background-color: green;
-            color: pink;
+            background-color: #1414149e;
+            color: white;
             border: none;
             padding: 10px;
             width: 100%;
@@ -79,7 +88,8 @@
 </head>
 <body>
     <div class="header">&lt;/adhoc games&gt;</div>
-    <div class="sidebar">
+    <div class="container">
+        <div class="sidebar">
             <h2>Guess Who</h2>
             <ul>
                 <button>Marvel</button>
@@ -91,14 +101,13 @@
                 <button>Thief's Life</button>
             </ul>
         </div>
-    <div class="container">
         <div class="content">
-            <button class="game-box">Scoundrel<br><small>Placeholder description</small></button>
-            <button class="game-box">Mastermind<br><small>Placeholder description</small></button>
-            <button class="game-box">Drink<br><small>Placeholder description</small></button>
-            <button class="game-box">ABC<br><small>Placeholder description</small></button>
-            <button class="game-box">DEF<br><small>Placeholder description</small></button>
-            <button class="game-box">GHI<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'Scoundrel.html';">Scoundrel<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'Mastermind.html';">Mastermind<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'a.html';">Drink<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'a.html';">ABC<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'a.html';">DEF<br><small>Placeholder description</small></button>
+            <button class="game-box" onclick="window.location.href = 'a.html';">GHI<br><small>Placeholder description</small></button>
         </div>
     </div>
 </body>
