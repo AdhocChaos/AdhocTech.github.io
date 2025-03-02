@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Guess Who</title>
+    <link rel="icon" type="image/x-icon" href="chimpken.ico">
     <style>
 
 body{
@@ -15,7 +16,7 @@ body{
 .grid-container {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
     margin:auto;
 }
 
@@ -80,6 +81,9 @@ body{
 <body>
     
 <header><h1>Guess Who</h1></header>   
+    </div>
+    <button class="button" onclick="window.location.href = 'index.html';">Back to Home</button>
+    </div>  
     <hr>
     <h3>To mark off characters you have eliminated, click the name below the portrait</h3>
     <h4>You may have to click twice, I'm sorry, I'm just happy it's working</h4>
@@ -422,23 +426,6 @@ body{
 </div>
 </div>
 
-    <!-- Leo -->
-    <div class="character-container" id="Leoo">
-        <!-- Character portrait -->
-        <div class="grid-row">
-            <div class="row4">
-            <div class="grid-item">
-        <div class="portrait-container">
-            <img src="Leo.png" class="portrait" id="Leo">
-            <!-- Overlay image -->
-            <img src="xLeo.png" class="overlay-image" id="LeoOverlay">
-        </div>
-        <!-- Button to eliminate the character -->
-        <button class="button" onclick="toggleOverlay('Leo')">Leo</button>
-    </div>
-</div>
-</div>
-</div>
 
     <!-- Lewis -->
     <div class="character-container" id="Lew">
@@ -741,58 +728,6 @@ function toggleOverlay(characterId) {
     }
 }
 
-
-        // Function to eliminate a character
-//function eliminateCharacter(characterId) {
-//    var overlayImg = document.getElementById(characterId + 'Overlay');
-//    overlayImg.style.opacity = 1; // Show the overlay image
-//    overlayImg.style.backgroundImage = '("x.png")'; // Replace path_to_overlay_image.png with the path to your overlay image for this character
-//}
-
-    
-    // Function to eliminate a character
-    //    function eliminateCharacter(characterId) {
-    //        var img = document.getElementById(characterId);
-      //      var characters = {
-        //        'Abigail': ['Abigail', 'xAbigail.png'],
-          //      'Alex': ['Alex', 'xAlex.png'],
-            //    'Caroline': ['Caroline', 'xCaroline.png'],
-              //  'Clint': ['Clint', 'xClint.png'],
-                //'Demetrius': ['Demetrius', 'xDemetrius.png'],
-//                'Dwarf': ['Dwarf', 'xDwarf.png'],
-  //              'Elliott': ['Elliott', 'xElliott.png'],
-    //            'Emily': ['Emily', 'xEmily.png'],
-      //          'Evelyn': ['Evelyn', 'xEvelyn.png'],
-        //        'George': ['George', 'xGeorge.png'],
-          //      'Gunther': ['Gunther', 'xGunther.png'],
-            //    'Gus': ['Gus', 'xGus.png'],
-              //  'Haley': ['Haley', 'xHaley.png'],
-                //'Harvey': ['Harvey', 'xHarvey.png'],
-//                'Jas': ['Jas', 'xJas.png'],
-  //              'Jodi': ['Jodi', 'xJodi.png'],
-    //            'Kent': ['Kent', 'xKent.png'],
-      //          'Krobus': ['Krobus', 'xKrobus.png'],
-        //        'Leah': ['Leah', 'xLeah.png'],
-          //      'Leo': ['Leo', 'xLeo.png'],
-            //    'Lewis': ['Lewis', 'xLewis.png'],
-              //  'Linus': ['Linus', 'xLinus.png'],
-                //'Marnie': ['Marnie', 'xMarnie.png'],
-//                'Maru': ['Maru', 'xMaru.png'],
-  //              'Morris': ['Morris', 'xMorris.png'],
-    //            'Pam': ['Pam', 'xPam.png'],
-      //          'Penny': ['Penny', 'xPenny.png'],
-        //        'Pierre': ['Pierre', 'xPierre.png'],
-          //      'Robin': ['Robin', 'xRobin.png'],
-            //    'Sam': ['Sam', 'xSam.png'],
-              //  'Sandy': ['Sandy', 'xSandy.png'],
-                //'Sebastian': ['Sebastian', 'xSebastian.png'],
-//                'Shane': ['Shane', 'xShane.png'],
-  //              'Vincent': ['Vincent', 'xVincent.png'],
-    //            'Willy': ['Willy', 'xWilly.png'],
-      //          'Wizard': ['Wizard', 'xWizard.png'],
-
-                // Add more characters here in the same format
-          //  };
 
     var characterArray = characters[characterId];
     var currentSrc = img.src;
