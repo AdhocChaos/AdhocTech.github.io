@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoundrel</title>
+      <link rel="icon" type="image/x-icon" href="adhoctech.ico">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .game-container {
+            flex-grow: 1;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            border-left: 1px solid white;
+            text-align: left;
+        }
+        .card {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .hearts { color: red; }
+        .diamonds { color: red; }
+        .clubs { color: blue; }
+        .spades { color: blue; }
+        #startScreen { text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="startScreen">
+        <h1>Scoundrel</h1>
+        <label for="playerNameInput">Enter your name:</label>
+        <input type="text" id="playerNameInput" placeholder="Player1">
+        <br>
+        <label for="difficultySelect">Choose difficulty:</label>
+        <select id="difficultySelect">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <br>
+        <button onclick="startGameSetup()">Start Game</button>
+    </div>
+    <div id="gameContent" style="display: none;">
+        <div class="game-container">
+            <h1>Scoundrel Card Game</h1>
+            <div id="gameStatus"></div>
+            <div id="cardDeck"></div>
+            <button onclick="runAway()">Run</button>
+        </div>
+        <div class="sidebar">
+            <h2>Player Stats</h2>
+            <p><strong>Name:</strong> <span id="playerName"></span></p>
+            <p><strong>Health:</strong> <span id="playerHealth"></span></p>
+            <p><strong>Floor:</strong> <span id="playerFloor"></span></p>
+            <p><strong>Weapon:</strong> <span id="playerWeapon"></span></p>
+            <p><strong>Deck Remaining:</strong> <span id="deckCount"></span></p>
+        </div>
+    </div>
+    <script>
+        const suits = ['♥', '♦', '♣', '♠'];
+        const values = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':11, 'Q':12, 'K':13, 'A':14};
+        let deck = [];
+        let hand = [];
+        let usedCards = 0;
+
+        const player = {
+            name: "",
+            health: 20,
+            floor: 1,
+            drawCount: 4,
+            lastRun: false,
+            weapon: {
+                name: "None",
+                power: 0,
+                usedOn: []
+            }
+        };
+
+        function startGameSetup() {
+            player.name = document.getElementById('playerNameInput').value || "Player1";
+            document.getElementById('playerName').innerText = player.name;
+            let difficulty = document.getElementById('difficultySelect').value;
+            createDeck(difficulty);
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('gameContent').style.display = 'flex';
+        }
+
+        function updatePlayerStats() {
+            document.getElementById('playerHealth').innerText = player.health;
+            document.getElementById('playerFloor').innerText = player.floor;
+            document.getElementById('playerWeapon').innerText = player.weapon.name + " (Power: " + player.weapon.power + ")";
+            document.getElementById('deckCount').innerText = deck.length;
+        }
+        
+        function createDeck(difficulty) {
+            deck = [];
+            suits.forEach(suit => {
+                Object.keys(values).forEach(value => {
+                    if (
+                        (difficulty === 'medium' && (value === 'Q' || value === 'K') && (suit === '♥' || suit === '♦')) ||
+                        (difficulty === 'hard' && (value === 'J' || value === 'Q' || value === 'K') && (suit === '♥' || suit === '♦'))
+                    ) {
+                        return; 
+                    }
+                    deck.push({ card: `${value}${suit}`, value: values[value], suit: suit });
+                });
+            });
+            deck.sort(() => Math.random() - 0.5);
+            startGame();
+        }
+
+        function drawCards(count) {
+            return deck.splice(0, count);
+        }
+
+        function displayCards(cards) {
+            const cardDeck = document.getElementById('cardDeck');
+            cardDeck.innerHTML = '';
+            cards.forEach(card => {
+                let colorClass = card.suit === '♥' || card.suit === '♦' ? 'hearts' : 'clubs';
+                let cardElement = document.createElement('div');
+                cardElement.className = `card ${colorClass}`;
+                cardElement.innerText = card.card;
+                cardElement.onclick = () => playCard(card);
+                cardDeck.appendChild(cardElement);
+            });
+        }
+
+        function playCard(card) {
+            if (card.suit === '♥') {
+                player.health = Math.min(20, player.health + card.value);
+            } else if (card.suit === '♦') {
+                player.weapon.name = card.card;
+                player.weapon.power = card.value;
+            } else if (card.suit === '♠' || card.suit === '♣') {
+                let damage = Math.max(0, card.value - player.weapon.power);
+                player.health -= damage;
+                if (player.health <= 0) {
+                    alert("Game Over! Play again?");
+                    location.reload();
+                    return;
+                }
+            }
+            usedCards++;
+            if (usedCards >= 3) {
+                nextFloor();
+            } else {
+                displayCards(drawCards(1));
+            }
+            updatePlayerStats();
+        }
+
+        function runAway() {
+            deck = deck.concat(hand);
+            deck.sort(() => Math.random() - 0.5);
+            startGame();
+        }
+
+        function nextFloor() {
+            player.floor++;
+            usedCards = 0;
+            startGame();
+        }
+
+        function startGame() {
+            hand = drawCards(player.drawCount);
+            displayCards(hand);
+            updatePlayerStats();
+        }
+    </script>
+</body>
+</html>
