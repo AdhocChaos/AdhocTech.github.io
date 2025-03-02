@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Wars</title>
+    <style>
+
+body{
+    margin-top: 2%;
+    margin-right: 3%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    background-color:#525252;
+}
+
+
+/* Style for the grid container */
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
+    margin:auto;
+}
+
+/* Style for each grid item */
+.grid-item {
+    text-align: center;
+}
+
+/* Adjust portrait size as needed */
+.portrait {
+    max-width: 1fr;
+    height: 1.8in;
+    border: solid black;
+}
+
+/* Style for the portrait container */
+.portrait-container {
+    position: relative; /* Ensure proper positioning for absolute elements */
+    display: inline-block; /* Maintain inline layout */
+}
+
+
+
+/* Style for the overlay image */
+.overlay-image {
+    position: absolute;
+    max-width: 100%;
+    height: 1.8in;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border: solid black;
+}
+
+/* Style for the button */
+.button {
+
+    font-size: 18px;
+    border-radius: 2px;
+    background-color: #181818;
+    color: rgb(161, 20, 255);
+    border: none;
+    padding: 2px 5px;
+    cursor: pointer;
+    text-align: center;
+    margin:auto;    
+    display: block; /* Make the buttons block elements */
+}
+
+
+.button:hover{
+    background-color: black;
+}
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+<header><h1>Star Wars Guess Who</h1></header>   
+    </div>
+<button class="button" onclick="window.location.href = 'index.html';">Back to Home</button>
+</div>  
+    <hr>
+    <h2>To mark off characters you have eliminated, click the name below the portrait</h2>
+    <h3>You may have to click twice, I'm sorry, I'm just happy it's working</h3>
+
+<div class="grid-container">
+
+    <!-- Ackbar --> 
+<div class="character-container" id="Ackbar">
+    <div class="grid-row">
+        <div class="row1">
+        <div class="grid-item">
+    <!-- Character portrait -->
+    <div class="portrait-container">
+        <img src="Ackbar.png" class="portrait" id="Ackbar">
+        <!-- Overlay image -->
+        <img src="xAckbar.png" class="overlay-image" id="AckbarOverlay">
+    </div>
+    <!-- Button to eliminate the character -->
+    <button class="button" onclick="toggleOverlay('Ackbar')">Admiral Ackbar</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Anakin -->
+    <div class="character-container" id="Anakin">
+        <div class="grid-row">
+            <div class="row1">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Anakin.png" class="portrait" id="Anakin">
+            <img src="xAnakin.png" class="overlay-image" id="AnakinOverlay">
+        </div>
+        <button class="button" onclick="toggleOverlay('Anakin')">Anakin Skywalker</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- BobaFett -->
+    <div class="character-container" id="BobaFett">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row1">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="BobaFett.png" class="portrait" id="BobaFett">
+            <!-- Overlay image -->
+            <img src="xBobaFett.png" class="overlay-image" id="BobaFettOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('BobaFett')">Boba Fett</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- C3PO -->
+    <div class="character-container" id="C3PO">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row1">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="C3PO.png" class="portrait" id="C3PO">
+            <!-- Overlay image -->
+            <img src="xC3PO.png" class="overlay-image" id="C3POOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('C3PO')">C3PO</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Chewbacca -->
+    <div class="character-container" id="Chewbacca">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row2">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Chewbacca.png" class="portrait" id="Chewbacca">
+            <!-- Overlay image -->
+            <img src="xChewbacca.png" class="overlay-image" id="ChewbaccaOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Chewbacca')">Chewbacca</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- DarthMaul -->
+    <div class="character-container" id="DarthMaul">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row2">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="DarthMaul.png" class="portrait" id="DarthMaul">
+            <!-- Overlay image -->
+            <img src="xDarthMaul.png" class="overlay-image" id="DarthMaulOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('DarthMaul')">Darth Maul</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Dooku -->
+    <div class="character-container" id="Dooku">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row2">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Dooku.png" class="portrait" id="Dooku">
+            <!-- Overlay image -->
+            <img src="xDooku.png" class="overlay-image" id="DookuOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Dooku')">Count Dooku</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Finn -->
+    <div class="character-container" id="Finn">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row2">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Finn.png" class="portrait" id="Finn">
+            <!-- Overlay image -->
+            <img src="xFinn.png" class="overlay-image" id="FinnOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Finn')">Finn</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Grogu -->
+    <div class="character-container" id="Grogu">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row2">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Grogu.png" class="portrait" id="Grogu">
+            <!-- Overlay image -->
+            <img src="xGrogu.png" class="overlay-image" id="GroguOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Grogu')">Grogu</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Han -->
+    <div class="character-container" id="Han">
+        <div class="grid-row">
+            <div class="row1">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Han.png" class="portrait" id="Han">
+            <img src="xHan.png" class="overlay-image" id="HanOverlay">
+        </div>
+        <button class="button" onclick="toggleOverlay('Han')">Han Solo</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- JarJar -->
+    <div class="character-container" id="JarJar">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row3">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="JarJar.png" class="portrait" id="JarJar">
+            <!-- Overlay image -->
+            <img src="xJarJar.png" class="overlay-image" id="JarJarOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('JarJar')">Jar Jar Binks</button>
+    </div>
+</div>
+</div>
+</div>
+    
+    <!-- Kylo -->
+    <div class="character-container" id="Kylo">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row3">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Kylo.png" class="portrait" id="Kylo">
+            <!-- Overlay image -->
+            <img src="xKylo.png" class="overlay-image" id="KyloOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Kylo')">Kylo Ren</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Leia -->
+    <div class="character-container" id="Leia">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row3">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Leia.png" class="portrait" id="Leia">
+            <!-- Overlay image -->
+            <img src="xLeia.png" class="overlay-image" id="LeiaOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Leia')">Princess Leia</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Luke -->
+    <div class="character-container" id="Luke">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row3">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Luke.png" class="portrait" id="Luke">
+            <!-- Overlay image -->
+            <img src="xLuke.png" class="overlay-image" id="LukeOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Luke')">Luke Skywalker</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Mace -->
+    <div class="character-container" id="Mace">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row3">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Mace.png" class="portrait" id="Mace">
+            <!-- Overlay image -->
+            <img src="xMace.png" class="overlay-image" id="MaceOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Mace')">Mace Windu</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Mandalorian -->
+    <div class="character-container" id="Mandalorian">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row4">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Mandalorian.png" class="portrait" id="Mandalorian">
+            <!-- Overlay image -->
+            <img src="xMandalorian.png" class="overlay-image" id="MandalorianOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Mandalorian')">Mandalorian</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Obiwan -->
+    <div class="character-container" id="Obiwan">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row4">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Obiwan.png" class="portrait" id="Obiwan">
+            <!-- Overlay image -->
+            <img src="xObiwan.png" class="overlay-image" id="ObiwanOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Obiwan')">Obi-Wan Kenobi</button>
+    </div>
+</div>
+</div>
+</div>
+    
+    <!-- Padme -->
+    <div class="character-container" id="Padme">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row4">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Padme.png" class="portrait" id="Padme">
+            <!-- Overlay image -->
+            <img src="xPadme.png" class="overlay-image" id="PadmeOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Padme')">Padmé Amidala</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Poe -->
+    <div class="character-container" id="Poe">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row4">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Poe.png" class="portrait" id="Poe">
+            <!-- Overlay image -->
+            <img src="xPoe.png" class="overlay-image" id="PoeOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Poe')">Poe Dameron</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- QuiGon -->
+    <div class="character-container" id="QuiGon">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row4">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="QuiGon.png" class="portrait" id="QuiGon">
+            <!-- Overlay image -->
+            <img src="xQuiGon.png" class="overlay-image" id="QuiGonOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('QuiGon')">Qui-Gon Jinn</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- R2D2 -->
+    <div class="character-container" id="R2D2">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row5">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="R2D2.png" class="portrait" id="R2D2">
+            <!-- Overlay image -->
+            <img src="xR2D2.png" class="overlay-image" id="R2D2Overlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('R2D2')">R2-D2</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Rey -->
+    <div class="character-container" id="Rey">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row5">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Rey.png" class="portrait" id="Rey">
+            <!-- Overlay image -->
+            <img src="xRey.png" class="overlay-image" id="ReyOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Rey')">Rey</button>
+    </div>
+</div>
+</div>
+</div>
+
+    <!-- Vader -->
+    <div class="character-container" id="Vader">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row5">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Vader.png" class="portrait" id="Vader">
+            <!-- Overlay image -->
+            <img src="xVader.png" class="overlay-image" id="VaderOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Vader')">Darth Vader</button>
+    </div>
+ </div>
+</div>
+</div>
+
+    <!-- Yoda -->
+    <div class="character-container" id="Yoda">
+        <!-- Character portrait -->
+        <div class="grid-row">
+            <div class="row5">
+            <div class="grid-item">
+        <div class="portrait-container">
+            <img src="Yoda.png" class="portrait" id="Yoda">
+            <!-- Overlay image -->
+            <img src="xYoda.png" class="overlay-image" id="YodaOverlay">
+        </div>
+        <!-- Button to eliminate the character -->
+        <button class="button" onclick="toggleOverlay('Yoda')">Yoda</button>
+    </div>
+</div>
+</div>
+</div>
+    
+    
+    <script>
+
+// Function to toggle the overlay image
+function toggleOverlay(characterId) {
+    var overlayImg = document.getElementById(characterId + 'Overlay');
+    if (overlayImg.style.opacity === "0") {
+        overlayImg.style.opacity = 1; // Show the overlay image
+    } else {
+        overlayImg.style.opacity = 0; // Hide the overlay image
+    }
+}
+
+
+
+
+    var characterArray = characters[characterId];
+    var currentSrc = img.src;
+    
+    // Find the index of the currentSrc within characterArray
+    var currentIndex = characterArray.indexOf(currentSrc);
+
+    // Calculate the index of the next image source
+    var nextIndex = (currentIndex + 1) % characterArray.length;
+
+    // Get the next image source from characterArray
+    var nextSrc = characterArray[nextIndex];
+
+    // Update the image source to the next state
+//    img.src = nextSrc;
+//}
+
+        
+    </script>
+</body>
+</html>
