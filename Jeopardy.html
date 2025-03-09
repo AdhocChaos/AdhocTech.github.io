@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhoc Games</title>
+        <link rel="icon" type="image/x-icon" href="adhoctech.ico">
+    <style>
+        body {
+            background-color: #29472b;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-size: 18px;
+        }
+        .header {
+            background-color: black;
+            color: #5d704b;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            max-height: 20vh;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            margin-top: 10vh;
+            margin-left: 5vh;
+        }
+        .sidebar {
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.5);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            text-align: center;
+            padding-top: 110px;
+        }
+        .sidebar h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 5px;
+        }
+        .sidebar ul button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 12px;
+            background-color: #29472b;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        .sidebar ul button:hover {
+            background-color: #203721;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            padding: 20px;
+            margin-left: 300px;
+            margin-right: 150px;
+            margin-top: 20px;
+        }
+        .game-box {
+            background-color: #5d704b;
+            padding: 20px;
+            width: 250px;
+            height: 125px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            border-style: solid;
+            border-color: #3d4a32;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .game-box button {
+            background-color: #5d704b;
+            color: black;
+            padding: 15px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        .game-box:hover {
+            background-color: #3d4a32;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" onclick="window.location.href = 'index.html';">
+        <img src="adhocgames.png" alt="Adhoc Games">
+    </div>    
+        <div style="max-width:500px; background-color:#2a3698; text-align:center; box-shadow: #2a3698 0 0 5px 0; padding:5px 10px"><iframe src="https://jeopardylabs.com/play/html-jeopardy-44?embed=1" frameborder="0" width="100%" height="500"></iframe><a target="_blank" href="https://jeopardylabs.com" style="color:#8791de; font-size:12px;">Jeopardy Game Template from JeopardyLabs!</a></div>
+    </div>
+    </div>
+</body>
+</html>
+
+
