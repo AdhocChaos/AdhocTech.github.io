@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
+            display: grid;
             font-size: larger;
         }
         .header {
@@ -40,29 +40,29 @@
             margin-left: 5vh;
         }
         .sidebarL {
-            width: 200px;
             padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
-            height: 100vh;
+            height: 100%;
+            width: 15vw;
             position: fixed;
             left: 0;
             top: 10vh;
             text-align: center;
             padding-top: 10px;
-            font-color: #ccc;
+            color: #ccc;
             overflow-y: auto;
         }
         .sidebarR {
-            width: 200px;
             padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
             height: 100vh;
+            width: 15vw;
             position: fixed;
             right: 0;
             top: 10vh;
             text-align: center;
             padding-top: 10px;
-            font-color: #ccc;
+            color: #ccc;
             overflow-y: auto;
         }
         
@@ -86,9 +86,7 @@
             border: none;
             cursor: pointer;
             text-align: center;
-            font-size: 18px;
             transition: background-color 0.3s;
-            font-size: 20px;
         }
         .sidebar ul button:hover {
             background-color: #203721;
@@ -101,7 +99,7 @@
             padding: 20px;
             margin-left: 300px;
             margin-right: 150px;
-            margin-top: 20px;
+            margin-top: 2vh;
         }
         .game-box {
             background-color: #5d704b;
@@ -127,6 +125,29 @@
         }
         .game-box:hover {
             background-color: #3d4a32;
+        }
+        a:link {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        a:visited {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+        
+        a:active {
+          color: #a7a7a7;
+          background-color: transparent;
+          text-decoration: underline;
         }
     </style>
 </head>
