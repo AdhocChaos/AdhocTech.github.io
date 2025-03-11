@@ -30,16 +30,20 @@
 
         .headerimg {
             max-height: 5rem;
+            margin: auto;
         }
 
         
         .container {
-            display: flex;
-            width: 100%;
+            display: grid;
+            position: relative;
+            width: 65vw;
+            left: 15vw;
             margin-top: 10vh;
             margin-left: 5vh;
         }
         .sidebarL {
+            grid-area: SL;
             padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
             height: 100%;
@@ -53,6 +57,7 @@
             overflow-y: auto;
         }
         .sidebarR {
+            grid-area: SR;
             padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
             height: 100vh;
@@ -71,37 +76,16 @@
             margin-bottom: 10px;
             color: white;
         }
-        .sidebar ul {
-            list-style-type: none;
-            padding: 5px;
-        }
-        .sidebar ul button {
-            display: block;
-            width: 100%;
-            margin: 5px 0;
-            padding: 12px;
-            background-color: #29472b;
-            border-radius: 8px;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-        .sidebar ul button:hover {
-            background-color: #203721;
-        }
+
         .content {
-            flex-grow: 1;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
             gap: 35px;
             padding: 20px;
             margin-left: 300px;
             margin-right: 150px;
             margin-top: 2vh;
         }
-        .game-box {
+        .tips {
             background-color: #5d704b;
             padding: 20px;
             width: 300px;
@@ -114,7 +98,7 @@
             text-align: center;
             transition: background-color 0.3s;
         }
-        .game-box button {
+        .tips button {
             background-color: #5d704b;
             color: black;
             padding: 15px;
@@ -123,7 +107,7 @@
             transition: background-color 0.3s;
             font-size: 20px;
         }
-        .game-box:hover {
+        .tips:hover {
             background-color: #3d4a32;
         }
         a:link {
@@ -149,6 +133,82 @@
           background-color: transparent;
           text-decoration: underline;
         }
+
+        #t1 {
+            grid-area: 1;
+        }
+        #t2 {
+            grid-area: 2;
+        }
+        #t3 {
+            grid-area: 3;
+        }
+        #t4 {
+            grid-area: 4;
+        }
+        #t5 {
+            grid-area: 5;
+        }
+        #t6 {
+            grid-area: 6;
+        }
+        #t7 {
+            grid-area: 7;
+        }
+        #t8 {
+            grid-area: 8;
+        }
+        #t9 {
+            grid-area: 9;
+        }
+        #t10 {
+            grid-area: 10;
+        }
+
+        @media screen and (min-width: 0em) {
+            .container {
+                grid-template-areas:
+                "t1 t1 t2 t2"
+                "t3 t3 t4 t4"
+                "t5 t5 t6 t6"
+                "t7 t7 t8 t8"
+                "t9 t9 t10 t10"
+                "SL SL SL SL"
+                "SR SR SR SR";
+            }
+        }
+
+        @media screen and (min-width: 38em) {
+            .container {
+                "t1 t1 t2 t2"
+                "t3 t3 t4 t4"
+                "t5 t5 t6 t6"
+                "t7 t7 t8 t8"
+                "t9 t9"
+                "SL SL SL SL"
+                "SR SR SR SR";
+            }
+        }
+
+        @media screen and (min-width: 54em) {
+            .container {
+                grid-template-areas:
+                "SL t1 t2 t3 SR"
+                "SL t4 t5 t6 SR"
+                "SL t7 t8 t9 SR"
+
+            }
+        }
+
+        @media screen and (min-width: 75em) {
+            .container {
+                grid-template-areas:
+                "SL t1 t2 t3 t4 SR"
+                "SL t5 t6 t7 t8 SR"
+                "SL t9 t10 SR"
+
+        }
+            }
     </style>
 </head>
 <body>
@@ -184,7 +244,7 @@ Y = redo what was just undone <br>
 P = print (you can "print" anything to a PDF to save it by selecting Save to PDF as your "printer") <br>
 A = all (select all text in the area) <br>
 S = save (doing this on a webpage can save the whole page as a PDF or something similar for easy saving confirmation screens or documents) <br>
-D = on browser, downloads or history. It changes. On Microsoft Word, opens a box to preview highlighted text in different fonts and sizes easily so you're not going back and forth to find the right one <br>
+D = on browser, downloads or history. It changes. On Microsoft Word, opens a tips to preview highlighted text in different fonts and sizes easily so you're not going back and forth to find the right one <br>
 F = find (locate any searched text and its reoccurrences in the webpage/document you're on) <br>
 <br>
 -Web Browser Specific- <br>
@@ -211,16 +271,16 @@ O = open document or project from your computer
         
 <!-- -->
         <div class="content">
-            <button class="game-box" onclick="window.location.href = 'a.html';">Drink<br><small>A drinking game</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">ABC<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">DEF<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">GHI<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">JKL<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">MNO<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">PQR<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">STU<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">VWX<br><small>Placeholder description</small></button>
-            <button class="game-box" onclick="window.location.href = 'a.html';">YZZ<br><small>Placeholder description</small></button>
+            <button id="t1" class="tips">Drink<br><small>A drinking game</small></button>
+            <button id="t2" class="tips">ABC<br><small>Placeholder description</small></button>
+            <button id="t3" class="tips">DEF<br><small>Placeholder description</small></button>
+            <button id="t4" class="tips">GHI<br><small>Placeholder description</small></button>
+            <button id="t5" class="tips">JKL<br><small>Placeholder description</small></button>
+            <button id="t6" class="tips">MNO<br><small>Placeholder description</small></button>
+            <button id="t7" class="tips">PQR<br><small>Placeholder description</small></button>
+            <button id="t8" class="tips">STU<br><small>Placeholder description</small></button>
+            <button id="t9" class="tips">VWX<br><small>Placeholder description</small></button>
+            <button id="t10" class="tips">YZZ<br><small>Placeholder description</small></button>
 
         </div>
     </div>
