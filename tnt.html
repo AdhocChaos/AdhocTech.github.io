@@ -42,26 +42,31 @@
         }
         .sidebarL {
             width: 200px;
-            padding: 20px;
+            padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
             height: 100vh;
             position: fixed;
             left: 0;
-            top: 0;
+            top: 10vh;
             text-align: center;
             padding-top: 110px;
+            background-color: #192b1a;
+            font-color: cccccc;
         }
-/*        .sidebarR {
-            width: 300px;
-            padding: 20px;
+        .sidebarR {
+            width: 200px;
+            padding: 10px;
             background-color: rgba(20, 20, 20, 0.5);
             height: 100vh;
             position: fixed;
             right: 0;
-            top: 0;
+            top: 10vh;
             text-align: center;
             padding-top: 110px;
-        }*/
+            background-color: #192b1a;
+            font-color: cccccc;
+        }
+        
         .sidebar h2 {
             margin-top: 10px;
             margin-bottom: 10px;
@@ -131,34 +136,26 @@
             <img class = "headerimg" onclick="window.location.href = 'index.html';" src="Adhoc.png" alt="Light sage green text in HTML closing brackets that says Adhoc. It means 'for this purpose' in Latin">
     </div>    
     <div class="container">
-<!--
-        <div class="sidebar">
-            <h2>GUESS WHO</h2>
-            <ul>
-                <button>Flights</button>
-                <button>Computer Shortcuts</button>
-                <button>Lord of the Rings</button>
-                <button>Stardew Valley</button>
-                <button>Pokemon</button>
-                <button>Avatar the Last Airbender</button>
-                <button>Thief's Life</button>
-            </ul>
-          </div>
-        </div>
--->
-        <div class="content">
-            <button class="game-box" onclick="window.location.href = '';">FLIGHTS<br><small>If you're booking flights, the cheapest way to go about it is to do the following: <br>
-~ Use incognito mode or private mode (this can be done usually in the options tabs, or on computer with control + shift + N, or command + shift + n for Apple weirdoes). Also ideally clear your cookies. Websites will track your browsing data and know you're looking at flights and hotels which will jack up the prices as you browse. This way, that doesn't happen as it doesn't allow cookies or history to be saved <br>
-~ I like using flights.google.com but if you have a preferred Airlines cause you have miles, use them. Google flights will give you a lot of the different airlines' prices and flight information with green numbers on the cheapest flights. It allows you to compare which days are cheapest up to 3 months in advance, use sliders and options to choose if you want to leave or arrive by certain times, and how long you're willing to layover for (There are overnight options I don't enjoy. You can avoid this with the slider).  (The bags option is important for most people as it will show you spirit flights that don't allow carry ons other than a personal item which has to be smol. But if you're doing what I did in February going to stay with Jon in Vegas, that was $27 a flight and I just packed very light) <br>
+<!-- -->
+        <div class="sidebarL">
+            <h2>FLIGHTS</h2>
+            <small>If you're booking flights, the cheapest way to go about it is to do the following: <br>
+~ Use incognito mode or private mode (this can be done usually in the options tabs. Also ideally clear your cookies. This will prevent websites to track your browsing data and know you're looking at flights and hotels which will jack up the prices as you browse.<br>
+~ I like using flights.google.com, but if you have a preferred Airlines because you have miles, use them. Google flights will give you a lot of the different airlines' prices and flight information with green numbers on the cheapest flights. It allows you to compare which days are cheapest up to 3 months in advance, use sliders and options to choose if you want to leave or arrive by certain times, and how long you're willing to layover for (There are overnight options I don't enjoy. You can avoid this with the slider). <br>
 ~ When selecting tickets, the cheapest way to go is to do one way for the there and the back tickets separately as then it won't just give you one airlines both ways, you can find the cheapest both ways regardless of airlines. <br>
-~ When flying in or out of the US, if you're going or coming from the East, flying through New York or Newark airport is often the cheapest route. If you're trying to go to Europe, for example, flying from your home state to Newark to Dublin, Ireland, to whatever country will typically be the cheapest way to go even if it takes a little longer. Also getting these tickets separately is often cheapest as well but watch the times of the flights carefully <br>
-~ Flying West, meanwhile, for example the Japan trip I'm planning, fly out of LAX (Los Angeles Airport). Same thing. I'm going BOI - LAX - Tokyo. When I was originally planning it for this past June, I was gonna use the miles I have saved through American Airlines to get us to LAX for free, then just buy the oversea flight and cut the price in half. <br>
-~ Flying out of a major city in your state, or flying into a major city of the state you're going to can be the cheapest and best options for flights. Some smaller cities have airports but have less traffic and therefore fewer options and higher prices. If you can make the commute out of the bigger cities, you'll be better off that way but if you're Ubering, might not be the case</small></button>
-            <button class="game-box" onclick="window.location.href = 'Mastermind.html';">COMPUTER SHORTCUTS<br><small>
- (Apple users, use command instead of control for these I'm pretty sure) <br>
-Control/Command +... <br>
+~ When flying in or out of the US, if you're going or coming from the east, flying through New York or Newark airport is often the cheapest route. If you're trying to go to Europe, for example, flying from your home state to Newark to Dublin, Ireland, to whatever country will typically be the cheapest way to go even if it takes a little longer. <br>
+~ Flying west, meanwhile, for example the Japan trip I'm planning, fly out of LAX (Los Angeles Airport). Same thing. I'm going from my home airport -> LAX -> Tokyo. This is a great time to use your miles fly to LAX/Newark for free/cheaper, then just buy the oversea flight and cut the price in half. <br>
+</small></button>
+        </div>
+
+        <div class="sidebarR">
+            <h2>COMPUTER SHORTCUTS</h2>
+            <small>
+                
+Control/Command ⌘ +... <br>
+(Windows users use Control (ctrl); Apple users use ⌘ Command) <br>
 <br>
--Anywhere- <br>
+-Most Anywhere- <br>
 C = copy <br>
 V = paste <br>
 X = cut (copy and delete) <br>
@@ -170,7 +167,7 @@ S = save (doing this on a webpage can save the whole page as a PDF or something 
 D = on browser, downloads or history. It changes. On Microsoft Word, opens a box to preview highlighted text in different fonts and sizes easily so you're not going back and forth to find the right one <br>
 F = find (locate any searched text and its reoccurrences in the webpage/document you're on) <br>
 <br>
--Web browser specific- <br>
+-Web Browser Specific- <br>
 R = refresh. Reloads the page <br>
 T = opens new tab <br>
 Shift + t = reopens most recently closed tab <br>
@@ -178,7 +175,7 @@ W = closes current tab <br>
 Shift + w = closes entire window (all tabs) <br>
 Shift + n = opens Incognito Mode Tab (private mode that won't track your browsing data or cookies) <br>
 <br>
--Document specific- <br>
+-Document Specific- <br>
 B = Bold <br>
 U = underline <br>
 I (i) = italicize <br>
@@ -187,7 +184,13 @@ R = adjust text to the right <br>
 E = center text <br>
 J = justify text (make it all square by weird spacing, aligned to left and right both) <br>
 N = new document or new project most of the time <br>
-O = open document or project from your computer</small></button>
+O = open document or project from your computer
+            </small></button>
+        </div>
+
+        
+<!-- -->
+        <div class="content">
             <button class="game-box" onclick="window.location.href = 'a.html';">Drink<br><small>A drinking game</small></button>
             <button class="game-box" onclick="window.location.href = 'a.html';">ABC<br><small>Placeholder description</small></button>
             <button class="game-box" onclick="window.location.href = 'a.html';">DEF<br><small>Placeholder description</small></button>
