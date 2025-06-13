@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhoc Tips and Tricks</title>
+        <link rel="icon" type="image/x-icon" href="adhoctech.ico">
+    <style>
+        body {
+            background-color: #29472b;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-size: 18px;
+        }
+        .header {
+            background-color: black;
+            color: #5d704b;
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            max-height: 20vh;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            margin-top: 10vh;
+            margin-left: 5vh;
+        }
+        .sidebar {
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.5);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            text-align: center;
+            padding-top: 110px;
+        }
+        .sidebar h2 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 5px;
+        }
+        .sidebar ul button {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 12px;
+            background-color: #29472b;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        .sidebar ul button:hover {
+            background-color: #203721;
+        }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            padding: 20px;
+            margin-left: 300px;
+            margin-right: 150px;
+            margin-top: 20px;
+        }
+        .game-box {
+            background-color: #5d704b;
+            padding: 20px;
+            width: 250px;
+            height: 125px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            border-style: solid;
+            border-color: #3d4a32;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .game-box button {
+            background-color: #5d704b;
+            color: black;
+            padding: 15px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px;
+        }
+        .game-box:hover {
+            background-color: #3d4a32;
+        }
+    </style>
+</head>
+<body>
+    <div class="header" onclick="window.location.href = 'index.html';">
+        <img src="Adhoc.png" alt="Adhoc Tech Tips">
+    </div>    
+    <div class="container">
+        <div class="sidebar">
+            <h2>JUMP TO</h2>
+            <ul>
+                <button onclick="window.location.href = "#flights";">Flights Tips</button>
+                <button onclick="window.location.href = 'StarWars/STARWARS.html';">Windows Shortcuts</button>
+                <button onclick="window.location.href = 'LOTR/LOTR.html';">Mac/Apple Shortcuts</button>
+                <button onclick="window.location.href = 'StardewValley/Stardew.html';">Who Knows</button>
+                <button onclick="window.location.href = 'Pokemon/POKEMON.html';">I dont fully know</button>
+                <button onclick="window.location.href = '/ATLA/ATLA.html';">Not Me</button>
+                <button onclick="window.location.href = '/Stories/Stories.html';">No Sir</button>
+            </ul>
+        </div>
+        <div class="content">
+            <button id="flights" class="game-box">Flight Tricks<br>
+              <small>If you're booking flights, the cheapest way to go about it is to do the following: <br>
+~ Use incognito mode or private mode (this can be done usually in the options tabs. Also ideally clear your cookies. This will prevent websites to track your browsing data and know you're looking at flights and hotels which will jack up the prices as you browse.<br>
+~ I like using flights.google.com, but if you have a preferred Airlines because you have miles, use them. Google flights will give you a lot of the different airlines' prices and flight information with green numbers on the cheapest flights. It allows you to compare which days are cheapest up to 3 months in advance, use sliders and options to choose if you want to leave or arrive by certain times, and how long you're willing to layover for (There are overnight options I don't enjoy. You can avoid this with the slider). <br>
+~ When selecting tickets, the cheapest way to go is to do one way for the there and the back tickets separately as then it won't just give you one airlines both ways, you can find the cheapest both ways regardless of airlines. <br>
+~ When flying in or out of the US, if you're going or coming from the east, flying through New York or Newark airport is often the cheapest route. If you're trying to go to Europe, for example, flying from your home state to Newark to Dublin, Ireland, to whatever country will typically be the cheapest way to go even if it takes a little longer. <br>
+~ Flying west, meanwhile, for example the Japan trip I'm planning, fly out of LAX (Los Angeles Airport). Same thing. I'm going from my home airport -> LAX -> Tokyo. This is a great time to use your miles fly to LAX/Newark for free/cheaper, then just buy the oversea flight and cut the price in half. <br></small></button>
+            <button id="keyboard" class="game-box">Computer Keyboard Shortcuts<br><smallControl/Command ⌘ +... <br>
+(Windows users use Control (ctrl); Apple users use ⌘ Command) <br>
+<br>
+-Most Anywhere- <br>
+C = copy <br>
+V = paste <br>
+X = cut (copy and delete) <br>
+Z = undo <br>
+Y = redo what was just undone <br>
+P = print (you can "print" anything to a PDF to save it by selecting Save to PDF as your "printer") <br>
+A = all (select all text in the area) <br>
+S = save (doing this on a webpage can save the whole page as a PDF or something similar for easy saving confirmation screens or documents) <br>
+D = on browser, downloads or history. It changes. On Microsoft Word, opens a tips to preview highlighted text in different fonts and sizes easily so you're not going back and forth to find the right one <br>
+F = find (locate any searched text and its reoccurrences in the webpage/document you're on) <br>
+<br>
+-Web Browser Specific- <br>
+R = refresh. Reloads the page <br>
+T = opens new tab <br>
+Shift + t = reopens most recently closed tab <br>
+W = closes current tab <br>
+Shift + w = closes entire window (all tabs) <br>
+Shift + n = opens Incognito Mode Tab (private mode that won't track your browsing data or cookies) <br>
+<br>
+-Document Specific- <br>
+B = Bold <br>
+U = underline <br>
+I (i) = italicize <br>
+L = adjust text to the left <br>
+R = adjust text to the right <br>
+E = center text <br>
+J = justify text (make it all square by weird spacing, aligned to left and right both) <br>
+N = new document or new project most of the time <br>
+O = open document or project from your computer</small></button>
+            <button id="idkk" class="game-box" onclick="window.location.href = 'Pong.html';">Pong<br><small>Classic ping-pong type game</small></button>
+            <button id="cleanup" class="game-box" onclick="window.location.href = 'Jeopardypage.html';">Jeopardy Template<br><small>Some custom Jeopardy boards</small></button>
+            <button id="idk1" class="game-box" onclick="window.location.href = 'FFpage.html';">Family Feud<br><small>Some custom Family Feud boards</small></button>
+            <button id="idk2" class="game-box" onclick="window.location.href = 'a.html';">GHI<br><small>Placeholder description</small></button>
+            <button id="idk3" class="game-box" onclick="window.location.href = 'a.html';">JKL<br><small>Placeholder description</small></button>
+            <button id="idk4" class="game-box" onclick="window.location.href = 'a.html';">MNO<br><small>Placeholder description</small></button>
+            <button id="idk5" class="game-box" onclick="window.location.href = 'a.html';">PQR<br><small>Placeholder description</small></button>
+            <button id="idk6" class="game-box" onclick="window.location.href = 'a.html';">STU<br><small>Placeholder description</small></button>
+            <button id="idk7" class="game-box" onclick="window.location.href = 'a.html';">VWX<br><small>Placeholder description</small></button>
+            <button id="idk8" class="game-box" onclick="window.location.href = 'a.html';">YZZ<br><small>Placeholder description</small></button>
+
+        </div>
+    </div>
+</body>
+</html>
