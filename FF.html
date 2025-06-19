@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Feud: Civics Edition</title>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #f4c430;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .answer-slot {
+      background-color: #0f3460;
+      border: 2px solid #f4c430;
+      padding: 15px;
+      border-radius: 10px;
+      position: relative;
+      font-size: 1.25rem;
+      transition: background-color 0.3s;
+    }
+
+    .answer-text {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .reveal-button {
+      background-color: #f4c430;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .reveal-button:hover {
+      background-color: #ffda59;
+    }
+  </style>
+</head>
+<body>
+  <h1>Family Feud: Civics Edition</h1>
+
+  <div class="board">
+    <div class="answer-slot">
+      <div class="answer-text">Freedom of speech</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+    <div class="answer-slot">
+      <div class="answer-text">Freedom of religion</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+    <div class="answer-slot">
+      <div class="answer-text">Freedom to petition the government</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+    <div class="answer-slot">
+      <div class="answer-text">Right to bear arms</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+    <div class="answer-slot">
+      <div class="answer-text">Freedom of assembly</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+    <div class="answer-slot">
+      <div class="answer-text">Freedom of expression</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(button) {
+      const answerDiv = button.previousElementSibling;
+      answerDiv.style.display = answerDiv.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
