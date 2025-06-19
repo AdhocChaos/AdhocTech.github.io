@@ -31,17 +31,22 @@
     .answer-slot {
       background-color: #0f3460;
       border: 2px solid #f4c430;
-      padding: 15px;
+      padding: 20px;
       border-radius: 10px;
       position: relative;
       font-size: 1.25rem;
-      transition: background-color 0.3s;
+    }
+
+    .slot-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f4c430;
+      display: block;
     }
 
     .answer-text {
       display: none;
-      margin-top: 10px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #ffffff;
     }
 
@@ -59,33 +64,47 @@
     .reveal-button:hover {
       background-color: #ffda59;
     }
+
+    .hidden .slot-number {
+      display: none;
+    }
+
+    .hidden .answer-text {
+      display: block;
+    }
   </style>
 </head>
 <body>
   <h1>Family Feud: Civics Edition</h1>
 
   <div class="board">
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot1">
+      <span class="slot-number">1</span>
       <div class="answer-text">Freedom of speech</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot2">
+      <span class="slot-number">2</span>
       <div class="answer-text">Freedom of religion</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot3">
+      <span class="slot-number">3</span>
       <div class="answer-text">Freedom to petition the government</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot4">
+      <span class="slot-number">4</span>
       <div class="answer-text">Right to bear arms</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot5">
+      <span class="slot-number">5</span>
       <div class="answer-text">Freedom of assembly</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
-    <div class="answer-slot">
+    <div class="answer-slot" id="slot6">
+      <span class="slot-number">6</span>
       <div class="answer-text">Freedom of expression</div>
       <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
     </div>
@@ -93,8 +112,8 @@
 
   <script>
     function toggleAnswer(button) {
-      const answerDiv = button.previousElementSibling;
-      answerDiv.style.display = answerDiv.style.display === "block" ? "none" : "block";
+      const slot = button.closest(".answer-slot");
+      slot.classList.toggle("hidden");
     }
   </script>
 </body>
