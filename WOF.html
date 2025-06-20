@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wheel of Fortune</title>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f4c430;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .category {
+      font-size: 1.5rem;
+      color: #ffda59;
+      margin-bottom: 20px;
+    }
+
+    .puzzle-board {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .tile {
+      background-color: #0f3460;
+      border: 2px solid #f4c430;
+      width: 40px;
+      height: 60px;
+      font-size: 2rem;
+      color: white;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .tile.revealed {
+      background-color: #f4c430;
+      color: #000;
+      cursor: default;
+    }
+
+    .wheel-container {
+      margin-bottom: 20px;
+    }
+
+    .spin-result {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #f4c430;
+    }
+
+    .spin-button {
+      background-color: #f4c430;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .spin-button:hover {
+      background-color: #ffda59;
+    }
+
+    .alphabet {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .letter-btn {
+      background-color: #0f3460;
+      border: 2px solid #f4c430;
+      color: #fff;
+      padding: 8px 12px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .letter-btn.guessed {
+      background-color: #444;
+      color: #aaa;
+      border-color: #666;
+      cursor: default;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wheel of Fortune</h1>
+  <div class="category">Cabinet-Level Position</div>
+
+  <div class="puzzle-board" id="puzzleBoard">
+    <!-- Letters of the puzzle go here -->
+    <!-- Example: "SECRETARY OF STATE" -->
+    <!-- Use space tiles for gaps -->
+  </div>
+
+  <div class="wheel-container">
+    <button class="spin-button" onclick="spinWheel()">Spin the Wheel</button>
+    <div class="spin-result" id="spinResult"></div>
+  </div>
+
+  <div class="alphabet" id="alphabet">
+    <!-- Letter buttons A-Z go here -->
+  </div>
+
+  <script>
+    const puzzle = "SECRETARY OF STATE";
+    const board = document.getElementById("puzzleBoard");
+    const spinResult = document.getElementById("spinResult");
+    const alphabet = document.getElementById("alphabet");
+
+    // Wheel segments
+    const wheelOptions = [
+      "100", "200", "300", "Lose a Turn", "Guess a Vowel", "100", "200", "300"
+    ];
+
+    // Build puzzle tiles
+    puzzle.split('').forEach((char, index) => {
+      const tile = document.createElement("div");
+      tile.classList.add("tile");
+      tile.dataset.char = char.toUpperCase();
+      if (char === " ") {
+        tile.style.border = "none";
+        tile.style.backgroundColor = "transparent";
+        tile.textContent = "";
+        tile.style.cursor = "default";
+      } else {
+        tile.textContent = "_";
+        tile.addEventListener("click", () => revealTile(tile));
+      }
+      board.appendChild(tile);
+    });
+
+    // Build letter buttons
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    letters.split('').forEach(letter => {
+      const btn = document.createElement("button");
+      btn.textContent = letter;
+      btn.classList.add("letter-btn");
+      btn.addEventListener("click", () => guessLetter(btn, letter));
+      alphabet.appendChild(btn);
+    });
+
+    function spinWheel() {
+      const result = wheelOptions[Math.floor(Math.random() * wheelOptions.length)];
+      spinResult.textContent = `You spun: ${result}`;
+    }
+
+    function guessLetter(button, letter) {
+      if (button.classList.contains("guessed")) return;
+      button.classList.add("guessed");
+
+      const tiles = document.querySelectorAll(".tile");
+      tiles.forEach(tile => {
+        if (tile.dataset.char === letter) {
+          revealTile(tile);
+        }
+      });
+    }
+
+    function revealTile(tile) {
+      tile.classList.add("revealed");
+      tile.textContent = tile.dataset.char;
+    }
+  </script>
+</body>
+</html>
