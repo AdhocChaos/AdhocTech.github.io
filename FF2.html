@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Feud Q2</title>
+  
+  <style>
+    body {
+      background-color: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #f4c430;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .answer-slot {
+      background-color: #0f3460;
+      border: 2px solid #f4c430;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      font-size: 1.25rem;
+    }
+
+    .slot-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #f4c430;
+      display: block;
+    }
+
+    .answer-text {
+      display: none;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+
+    .reveal-button {
+      background-color: #f4c430;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .reveal-button:hover {
+      background-color: #ffda59;
+    }
+
+    .hidden .slot-number {
+      display: none;
+    }
+
+    .hidden .answer-text {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<h1>
+  <a href="FF2.html">
+    <img src="FF.png" alt="Family Feud" style="height: 12vw;" />
+  </a>
+</h1>
+
+  <div class="board">
+    <div class="question" id="q1">
+      <span class="slot-number">What are the reasons why the colonists fought the British?</span>
+      <span class="slot-number">Points are doubled this round</span>
+      <div class="answer-text"></div>
+    </div>
+    <div class="answer-slot" id="slot1">
+      <span class="slot-number">1</span>
+      <div class="answer-text">High Taxes (Taxation without Representation</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
+    </div>
+    <div class="answer-slot" id="slot2">
+      <span class="slot-number">2</span>
+      <div class="answer-text">British Army stayed in their homes (Quartering)</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
+    </div>
+    <div class="answer-slot" id="slot3">
+      <span class="slot-number">3</span>
+      <div class="answer-text">No self-government</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
+    </div>
+    <div class="answer-slot" id="slot4">
+      <span class="slot-number">4</span>
+      <div class="answer-text">Trade Restrictions</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
+    </div>
+    <div class="answer-slot" id="slot5">
+      <span class="slot-number">5</span>
+      <div class="answer-text">Lack of Representation in Parliament</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleAnswer(button) {
+      const slot = button.closest(".answer-slot");
+      slot.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
