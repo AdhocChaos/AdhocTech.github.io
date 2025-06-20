@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Family Feud: Civics Edition</title>
+  <title>Family Feud</title>
+  
   <style>
     body {
       background-color: #1a1a2e;
@@ -75,38 +76,42 @@
   </style>
 </head>
 <body>
-  <h1>Family Feud: Civics Edition</h1>
+<h1><button onclick="window.location.href = 'FF2.html';">Family Feud</button></h1>
 
   <div class="board">
+    <div class="question" id="q1">
+      <span class="slot-number">What are the Branches/Parts of the Government?</span>
+      <div class="answer-text"></div>
+    </div>
     <div class="answer-slot" id="slot1">
       <span class="slot-number">1</span>
-      <div class="answer-text">Freedom of speech</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">Legislative</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
     <div class="answer-slot" id="slot2">
       <span class="slot-number">2</span>
-      <div class="answer-text">Freedom of religion</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">Executive</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
     <div class="answer-slot" id="slot3">
       <span class="slot-number">3</span>
-      <div class="answer-text">Freedom to petition the government</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">Judicial</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
     <div class="answer-slot" id="slot4">
       <span class="slot-number">4</span>
-      <div class="answer-text">Right to bear arms</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">Congress</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
     <div class="answer-slot" id="slot5">
       <span class="slot-number">5</span>
-      <div class="answer-text">Freedom of assembly</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">President</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
     <div class="answer-slot" id="slot6">
       <span class="slot-number">6</span>
-      <div class="answer-text">Freedom of expression</div>
-      <button class="reveal-button" onclick="toggleAnswer(this)">Show/Hide</button>
+      <div class="answer-text">The Courts</div>
+      <button class="reveal-button" onclick="toggleAnswer(this)">Survey Says</button>
     </div>
   </div>
 
