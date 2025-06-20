@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fast Money Round</title>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #f4c430;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 2rem;
+      margin: 10px 0 30px;
+    }
+
+    .columns {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      background-color: #0f3460;
+      border: 2px solid #f4c430;
+      border-radius: 10px;
+      padding: 20px;
+      min-width: 250px;
+    }
+
+    .column h2 {
+      color: #f4c430;
+      margin-bottom: 15px;
+    }
+
+    .answer-slot {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .slot-number {
+      font-size: 1.2rem;
+      color: #f4c430;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .answer-input {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: none;
+      display: block;
+    }
+
+    .toggle-button, .timer-button {
+      background-color: #f4c430;
+      color: #000;
+      border: none;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .toggle-button:hover,
+    .timer-button:hover {
+      background-color: #ffda59;
+    }
+
+    .hidden-input .answer-input {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fast Money Round</h1>
+
+  <div class="timer" id="timer">30</div>
+  <button class="timer-button" onclick="startTimer()">Start Timer</button>
+  <button class="timer-button" onclick="resetTimer()">Reset</button>
+
+  <div class="columns">
+    <!-- Player 1 -->
+    <div class="column" id="column1">
+      <h2>Player 1</h2>
+      <div class="answer-slot">
+        <span class="slot-number">1</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">2</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">3</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">4</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">5</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">6</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <button class="toggle-button" onclick="toggleColumn('column1')">Hide/Show Answers</button>
+    </div>
+
+    <!-- Player 2 -->
+    <div class="column" id="column2">
+      <h2>Player 2</h2>
+      <div class="answer-slot">
+        <span class="slot-number">1</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">2</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">3</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">4</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">5</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <div class="answer-slot">
+        <span class="slot-number">6</span>
+        <input class="answer-input" type="text" />
+      </div>
+      <button class="toggle-button" onclick="toggleColumn('column2')">Hide/Show Answers</button>
+    </div>
+  </div>
+
+  <script>
+    let timer;
+    let timeLeft = 30;
+
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+        } else {
+          timeLeft--;
+          document.getElementById("timer").textContent = timeLeft;
+        }
+      }, 1000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timeLeft = 30;
+      document.getElementById("timer").textContent = timeLeft;
+    }
+
+    function toggleColumn(columnId) {
+      const column = document.getElementById(columnId);
+      column.classList.toggle("hidden-input");
+    }
+  </script>
+</body>
+</html>
